@@ -1,0 +1,39 @@
+<div class="card">
+  <div class="card-header" style="background-color: darkblue; color: white;">
+    <div style="float: left;">{{ title }}</div>
+    <div style="float: right; padding-right: 1px;">
+      <i (click)="closeWindow()" class="fa fa-window-close" aria-hidden="true"></i>
+    </div>
+  </div>
+  <div class="card-body" style="background-color:lightpink">
+    <br />
+    <div class="form-group">
+      <label>Product Name</label>
+      <input type="text" class="form-control" [(ngModel)]="product.name" />
+    </div>
+    <div class="form-group">
+      <label>Description</label>
+      <input type="text" class="form-control" [(ngModel)]="product.description" />
+    </div>
+    <div class="form-group">
+      <label>Price</label>
+      <input type="text" class="form-control" [(ngModel)]="product.price" />
+    </div>
+    <div class="form-group">
+      <label>Manufacturer</label>
+      <input type="text" class="form-control" [(ngModel)]="product.manufacturer" />
+    </div>
+    <div class="form-group">
+      <label>Quantity</label>
+      <input type="text" class="form-control" [(ngModel)]="product.quantity" />
+    </div>
+    <div class="form-group">
+      <label>InStock</label>&nbsp;&nbsp;&nbsp;
+      <!--<input type="checkbox" [(ngModel)]="product.inStock" />-->
+      <input type="radio" [(ngModel)]="product.inStock" [value]="true" [checked]="product.inStock" name="xyz">true
+      &nbsp;&nbsp;&nbsp;
+      <input type="radio" [(ngModel)]="product.inStock" [value]="false" [checked]="!product.inStock" name="xyz">false
+    </div>
+    <br />
+  </div>
+</div>

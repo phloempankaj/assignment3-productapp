@@ -1,0 +1,12 @@
+<div class="card" >
+  <div class="card-header" style="background-color: darkblue; color: white;">
+    {{ title }}
+  </div>
+  <div class="card-body" style="background-color: lightgrey;">
+    <div class="ui vertical menu" *ngFor="let product of products">
+      <a class="item" (click)="selectProduct(product.id)" style="">
+        {{ product.name | uppercase }}
+      </a>
+    </div>
+  </div>
+</div>

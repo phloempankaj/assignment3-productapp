@@ -1,0 +1,16 @@
+<div class="row">
+  <div class="div" style="width: 25%; margin: 5px;">
+    <app-product-list [products]="products" (selectionChanged)="dashboardSelectionChanged($event)">
+    </app-product-list>
+  </div>
+
+  <div class="div" style="width: 40%; margin: 5px;">
+    <app-product-details *ngIf="selectedProduct" [product]="selectedProduct"
+      (closeWindowComponent)="closeDetailsWindow($event)" (updateProductDetails)="updateProduct($event)">
+    </app-product-details>
+  </div>
+  <div class="div" style="width: 30%; margin: 5px;">
+    <app-product-form *ngIf="selectedProduct && selectedProductToUpdate" [product]="selectedProductToUpdate" (closeWindowComponent)="closeFormWindow($event)"></app-product-form>
+  </div>
+  <div style="clear: both;"></div>
+</div>

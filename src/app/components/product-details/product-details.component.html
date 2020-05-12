@@ -1,0 +1,46 @@
+<div class="card">
+  <div class="card-header" style="background-color: darkblue; color: white;">
+    <div style="float: left;">{{ title }}</div>
+    <div style="float: right; padding-right: 1px;">
+        <i  (click)="closeWindow()" class="fa fa-window-close" aria-hidden="true"></i>
+    </div>
+  </div>
+  <div class="card-body" style="background-color: aquamarine;">
+    <h2>{{ product.name | uppercase }}</h2>
+    {{ product.description }}
+    <br /><br />
+    <table
+      class="table table-bordered"
+      style="background-color: maroon; color: white;"
+    >
+      <tr>
+        <th width="200">Product Id</th>
+        <td>{{ product.id }}</td>
+      </tr>
+      <tr>
+        <th>Price</th>
+        <td>{{ product.price }}</td>
+      </tr>
+      <tr>
+        <th>Manufacturer</th>
+        <td>{{ product.manufacturer }}</td>
+      </tr>
+      <tr>
+        <th>Quantity</th>
+        <td>{{ product.quantity }}</td>
+      </tr>
+      <tr>
+        <th>In Stock</th>
+        <td>
+          <i *ngIf="product.inStock" class="fa fa-check" aria-hidden="true"></i>
+          <i
+            *ngIf="!product.inStock"
+            class="fa fa-window-close"
+            aria-hidden="true"
+          ></i>
+        </td>
+      </tr>
+    </table>
+    <button class="btn btn-primary" (click)="updateProduct()">Update</button>
+  </div>
+</div>
